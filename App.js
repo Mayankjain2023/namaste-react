@@ -1,50 +1,63 @@
+import React from "react";
+import  ReactDOM  from "react-dom/client";
+
+//React.creteElement basically creates an object =>object and when we render this to DOM it => HTML element
+//ReactDOM is used for displaying on the browser
+//ReactDOM takes the object returned by react.createElement and converts it into HTML element to render it on browser
 
 
-{/* 
-<div id="parent">
-    <div id="child">
-        <h1>bla bla!</h1>
-        <h2>bla bla 2!</h2>
+//JSX -> HTML or XML like syntax ( its not html inside javascript)
+//JSX is isolated ( its not part of react)
+//JSX is not proper js so JS engines cannot comprehend them -> here parcel is doing the job
+//JSX (transpiled before it reaches the js engine)-parcel-babel's job
+//In JSX to give class you need to give className to it
+//JSX written in one line is fine syntax but to write it in multiple lines -> it must be wrapped in () brackets
+
+// const heading = React.createElement('h1',{id:'heading'},"Namaste react");
+
+
+//jsx
+//React element
+// const heading = (<h1  className="head" tabIndex='5' >
+//     Namaste React via JSX
+//     </h1> )
+// console.log("JSX",jsxElement);
+
+
+//class component - old
+//functional component - new
+
+//React function component - normal js function with first cap letter ( returns react element ( jsx))
+
+
+//React functional component
+const Title = ()=>(
+    <div id = "title">
+        <h3>This is the title</h3>
     </div>
-     <div id="child2">      // to have multple nested childrens? => { pass array of elements as props}
-        <h1>bla bla!</h1>
-        <h2>bla bla 2!</h2>
-    </div>
-</div>
-
-*/
-
-
-}
-
-
-const parent = React.createElement("div",{id:"parent"},
-   [ React.createElement("div",{id:"child"},
-   [ React.createElement("h1",{},'I am an h1 tag!'), React.createElement('h2',{},'i am an h2 tag') ]
-),
-    React.createElement("div",{id:"child2"},
-    [ React.createElement("h1",{},'I am an h1 tag!'), React.createElement('h2',{},'i am an h2 tag') ]
-    )]
 )
-// when required multiple child elements pass element as an array
 
 
-//this way it looks messy -> thts'y we have JSX
-// JSX makes our life esy when we have to create elements using JAVASCRIPT 
+const Message = ()=> (
+    <p>This is the test message.</p>
+)
 
-console.log("Parent",parent);
+// component composition
+const HeadingComponent = ()=>(
 
-const heading = React.createElement('h1',{
-    id:"heading",xyz:"abc"
-},'Hello from react');
+    (
+    <div id="container"> 
+        <Title/>
+        <h1 className="heading">Functional heading component</h1>
+        <Message/>
+    </div>
+    )
+)
 
 
-console.log(heading);
-//object
-//createElement here returns the object
+console.log(<HeadingComponent/>);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
-root.render(parent); 
-//render method converts the heading object to the element
+root.render(<HeadingComponent/>);
