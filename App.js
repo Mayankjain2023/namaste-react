@@ -1,63 +1,97 @@
 import React from "react";
 import  ReactDOM  from "react-dom/client";
 
-//React.creteElement basically creates an object =>object and when we render this to DOM it => HTML element
-//ReactDOM is used for displaying on the browser
-//ReactDOM takes the object returned by react.createElement and converts it into HTML element to render it on browser
+/**
+ * Header
+ * - Logo 
+ * - Nav Items
+ * Body
+ *  - Search
+ *  - RestaurantContainer
+ *      -RestaurantCard
+ *            ->image
+ *            ->Name
+ *            ->Cuisines
+ *            ->Rate/offer
+ * Footer
+ * -Copyright
+ * -Links
+ * -Address 
+ * -Contact
+ * 
+ */
 
 
-//JSX -> HTML or XML like syntax ( its not html inside javascript)
-//JSX is isolated ( its not part of react)
-//JSX is not proper js so JS engines cannot comprehend them -> here parcel is doing the job
-//JSX (transpiled before it reaches the js engine)-parcel-babel's job
-//In JSX to give class you need to give className to it
-//JSX written in one line is fine syntax but to write it in multiple lines -> it must be wrapped in () brackets
-
-// const heading = React.createElement('h1',{id:'heading'},"Namaste react");
-
-
-//jsx
-//React element
-// const heading = (<h1  className="head" tabIndex='5' >
-//     Namaste React via JSX
-//     </h1> )
-// console.log("JSX",jsxElement);
-
-
-//class component - old
-//functional component - new
-
-//React function component - normal js function with first cap letter ( returns react element ( jsx))
-
-
-//React functional component
-const Title = ()=>(
-    <div id = "title">
-        <h3>This is the title</h3>
-    </div>
-)
-
-
-const Message = ()=> (
-    <p>This is the test message.</p>
-)
-
-// component composition
-const HeadingComponent = ()=>(
-
-    (
-    <div id="container"> 
-        <Title/>
-        <h1 className="heading">Functional heading component</h1>
-        <Message/>
-    </div>
+const Header = () =>{
+    return (
+        <div className="heading">
+            <div className="logo-container">
+               <img className="logo" src="data:image/png;base64,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"/>
+            </div>
+            <div className="nav-items">
+                <ul>
+                    <li>Home</li>
+                    <li>About Us</li>
+                    <li>Contact Us</li>
+                    <li>Cart</li>
+                    
+                </ul>
+            </div>    
+        </div>
+        
     )
-)
+}
+
+const RestoCard = ()=>{
+    return (
+        <div className="res-card">
+            <h3>Sagar ratna</h3>
+            <img className="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf" />
+            <span>Rate : 320</span>
+        </div>
+    )
+}
+
+const Body = () =>{
+    return (
+        <div className="body">
+            <div className="search">Search</div>
+                <div className="res-container">
+                    <div className="res-card">
+                        <RestoCard/>
+                     
+
+                    </div>
+                </div>
+        </div>
+    )
+}
+
+const Footer = ()=>{
+    return (
+        <div className="footer">
+            Footer
+        </div>
+    )
+}
 
 
-console.log(<HeadingComponent/>);
+
+
+const AppLayout = () =>{
+    return(
+        <div className= "app">
+            <Header/>
+            <Body/>
+            <Footer/>
+        </div>
+    )
+}
+
+
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 
-root.render(<HeadingComponent/>);
+root.render(<AppLayout/>);
