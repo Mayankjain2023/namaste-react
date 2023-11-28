@@ -16,7 +16,8 @@
     font-size: medium;
 }
 
-.nav-items > ul {
+.nav-items > ul {   
+    font-size: 24px;
     display: flex;
     list-style-type: none;
 }
@@ -29,26 +30,34 @@
 }
 
 .body {
-    height: 500px;
     border: 1px solid gray;
 
 }
 
 .res-container{
-    /* justify-content: space-between; */
-    /* padding: 10px; */
-    /* margin: 10px; */
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid gold;
+}
+.res-logo{
+    padding: 5px;
+    width: 100%;
 }
 
 .res-card{
-    display: flex;
-    border: 1px solid rgb(6, 0, 0);
+    
     border-radius: 2px;
-    height: 250px;
+    height: 300px;
     width: 200px;
-    padding: 15px;
-    margin: 10px;
+    padding: 5px;
+    margin: 5px;
     background-color:#f0f0f0;
+}
+
+.res-card:hover{
+    cursor: pointer;
+    border: 1px solid rgb(100, 97, 97);
+
 }
 
 .search{
