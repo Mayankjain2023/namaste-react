@@ -42,12 +42,24 @@ const Header = () =>{
     )
 }
 
-const RestoCard = ()=>{
+//props-> prop drilling (arguments to a function [equivalent])
+//writing props as {resName,rate} -> destructuring on the fly
+
+//Config driven UI - > to be studied 
+/**
+ * Data has config which defines different paramenters for different portions of ui
+ * based on regions/language/preferences etc
+ * Keeps the application modular and more persoalized
+ * 
+ */
+
+const RestoCard = (props)=>{
+    const {resName,rate,rating } = props;
     return (
         <div className="res-card">
             <img className="res-logo" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/e33e1d3ba7d6b2bb0d45e1001b731fcf" />
-            <h3>Sagar Ratna</h3>
-            <h4>Rate : $ 320</h4>
+            <h3>{resName}</h3>
+            <h4>Rate : {rate} </h4>
         </div>
     )
 }
@@ -56,21 +68,40 @@ const Body = () =>{
     return (
         <div className="body">
             <div className="search">Search</div>
+
                 <div className="res-container">
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
-                        <RestoCard/>
+                        <RestoCard 
+                        resName = "Outlet 1" 
+                        rate="300"
+                        rating='5'
+                        />
+                        <RestoCard
+                        resName = "Outlet 2"
+                        rate="340"
+                        rating='4.5'
+                        />
+                        <RestoCard 
+                        resName = "Outlet 3" 
+                        rate="560"
+                        rating='4.8'
+
+                        />
+                        <RestoCard
+                        resName = "Outlet 4"
+                        rate="60"
+                        rating='4'
+                        />
+                        <RestoCard 
+                        resName = "Outlet 5" 
+                        rate="270"
+                        rating='3.9'
+                        />
+                        <RestoCard 
+                        resName = "Outlet 6" 
+                        rate="45"
+                        rating='4.7'
+                        />
+                        
 
                 </div>
         </div>
