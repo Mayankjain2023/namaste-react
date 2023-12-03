@@ -1,5 +1,28 @@
 # namaste-react
 
+Project Design :
+
+/**
+ * Header
+ * - Logo 
+ * - Nav Items
+ * Body
+ *  - Search
+ *  - RestaurantContainer
+ *      -RestaurantCard
+ *            ->image
+ *            ->Name
+ *            ->Cuisines
+ *            ->Rate/offer
+ * Footer
+ * -Copyright
+ * -Links
+ * -Address 
+ * -Contact
+ * 
+ */
+
+
 1. emmet
 2. CDN
 3. what is crossorigin
