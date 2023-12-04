@@ -60,6 +60,13 @@
 
 }
 
+.filter-btn{
+    padding: 5px;
+    margin: 5PX;
+    cursor: pointer;
+    background-color: lightgreen;
+}
+
 .search{
     padding: 10px;
 }
