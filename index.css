@@ -47,7 +47,7 @@
 .res-card{
     
     border-radius: 2px;
-    height: 350px;
+    height: 400px;
     width: 200px;
     padding: 5px;
     margin: 5px;
@@ -76,4 +76,26 @@
     display: flex;
     height: 100px;
     border: 1px solid brown;
+}
+
+
+.shimmer-container{
+    display: flex;
+    flex-wrap: wrap;
+    border: 1px solid gold;
+}
+
+.shimmer-card{
+    border-radius: 2px;
+    height: 400px;
+    width: 200px;
+    padding: 5px;
+    margin: 5px;
+    background-color:#f0f0f0;
+}
+
+
+.login-button {
+    margin-top: 20px;
+    cursor: pointer;
 }
