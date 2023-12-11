@@ -28,16 +28,15 @@
     font-size: large;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
+/* 
 .body {
     border: 1px solid gray;
 
-}
+} */
 
 .res-container{
     display: flex;
     flex-wrap: wrap;
-    border: 1px solid gold;
 }
 .res-logo{
     padding: 5px;
@@ -61,15 +60,17 @@
 }
 
 .filter-btn{
-    padding: 5px;
-    margin: 5PX;
+    /* padding: 5px; */
+    margin-left: 5px;
     cursor: pointer;
     background-color: lightgreen;
+    justify-content: end;
 }
-
+/* 
 .search{
+    margin-top: 10px;
     padding: 10px;
-}
+} */
 
 .footer {
     margin-top: 15px;
@@ -98,4 +99,20 @@
 .login-button {
     margin-top: 20px;
     cursor: pointer;
+}
+/* 
+.search-bar {
+   border:1px;
+   border-radius: 0.5px;
+  
+} */
+
+.search-btn{
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.filter{
+    display: flex;
+    margin-bottom: 10px;
 }
