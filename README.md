@@ -1,26 +1,5 @@
 # namaste-react
 
-Project Design :
-
-/**
- * Header
- * - Logo 
- * - Nav Items
- * Body
- *  - Search
- *  - RestaurantContainer
- *      -RestaurantCard
- *            ->image
- *            ->Name
- *            ->Cuisines
- *            ->Rate/offer
- * Footer
- * -Copyright
- * -Links
- * -Address 
- * -Contact
- * 
- */
 
 
 1. emmet
@@ -90,3 +69,27 @@ Virtual DOM is created out of react.createElement('h1','id','msg');
 which returns a react object consisting of nodes
 
 Github: acdlite/react-fibre-architecture
+
+
+
+Project Design :
+
+/**
+ * Header
+ * - Logo 
+ * - Nav Items
+ * Body
+ *  - Search
+ *  - RestaurantContainer
+ *  - RestaurantCard
+ *     -> image
+ *     -> Name
+ *     -> Cuisines
+ *     -> Rate/offer
+ * Footer
+ * -Copyright
+ * -Links
+ * -Address 
+ * -Contact
+ * 
+ */
