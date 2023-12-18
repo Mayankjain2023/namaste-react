@@ -44,6 +44,16 @@ a) Whenever a state variable updates/changes react rerenders the component
 b) React re-renders the changes in DOM extremely fast
 c) It keeps the data layer in sync with UI layer
 2) useEffect()
+{
+    useEffet gets call after the component is rendered, everytime when the component is called after it gets rendered only then useEffect is called,only callback function is mandatory in useEffect (not dependency array)
+
+    If there is no dependency arr , it will be render after everytime component is rendered
+    if it has empty dependency array , it will render only once initially
+
+    basic nature of useEffect is to re-render, but if we give it a dependency arr that it its called only initial render
+    if we give some non-empty dependency , it renders everytime when the dependency array changes
+
+}
 
 
 
