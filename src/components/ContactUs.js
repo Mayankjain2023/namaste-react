@@ -1,11 +1,11 @@
 const ContactUs = ()=>{
 
     return (
-        <div className="contact-us">
-            <div className="contact-us-heading">
+        <div >
+            <div >
                 <h1>Contact Us</h1>
             </div>
-            <div className="contact-us-body">
+            <div>
                 <p>
                     Contact Us via mail , mobile blah blah 
                 </p>

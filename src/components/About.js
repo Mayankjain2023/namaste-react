@@ -2,11 +2,11 @@ const About = ()=>{
 
 
     return (
-        <div className="about-container">
-            <div className="about-heading">
+        <div >
+            <div >
                 <h1>About </h1>
             </div>
-            <div className="about-body">
+            <div>
                     <p>
                         This is about swiggy application page;
                     </p>
