@@ -1,5 +1,6 @@
 import { useState } from "react"
 import { LOGO_URL } from "../utils/constants"
+import { Link } from "react-router-dom";
 
 
 
@@ -7,7 +8,9 @@ import { LOGO_URL } from "../utils/constants"
 const Header = () =>{
     let btnName = "Logout";
 
-
+    //while using react and to route to another page , do not use anchor tag <a>
+    //use LINK component provided by the react 
+    //as <a> reloads the page where as Link comp just replaces the component with child component
     const [loginState,setLoginState] = useState('Logout');
 
     return (
@@ -19,10 +22,26 @@ const Header = () =>{
             </div>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About Us</li>
-                    <li>Contact Us</li>
-                    <li>Cart</li>
+                    <li>
+                        <Link to='/'>
+                            Home
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/about'>
+                        About Us
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/contact'>
+                        Contact Us
+                        </Link>
+                    </li>
+                    <li>
+                        <Link to='/cart'>
+                            Cart
+                        </Link>
+                    </li>
 
                     <span >
                         <button className="login-button" onClick={()=>{console.log("click"); loginState == 'Login' ? setLoginState('Logout') : setLoginState('Login')}}>
