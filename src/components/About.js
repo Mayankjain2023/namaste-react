@@ -1,3 +1,6 @@
+import User from "./User";
+import UserClass from "./UserClass";
+
 const About = ()=>{
 
 
@@ -7,9 +10,8 @@ const About = ()=>{
                 <h1>About </h1>
             </div>
             <div>
-                    <p>
-                        This is about swiggy application page;
-                    </p>
+                        <User name={'Mayank'} location={'Delhi'} />
+                        <UserClass name = {'Mayank'} location = {'Delhi'}/>
             </div>
         </div>
     )
