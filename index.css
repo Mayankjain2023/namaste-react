@@ -128,5 +128,13 @@
     padding: 5px;
     margin: 20px;
     justify-content: center;
+    
 
+}
+
+.user-img{
+    height:200px;
+    width:200px;
+    display:flex;
+    border-radius:40px;
 }
