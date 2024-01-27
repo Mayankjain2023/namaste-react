@@ -2,6 +2,8 @@ import RestoCard from "./RestaurantCard";
 import { useState,useEffect } from "react";
 import ShimmerUI from "./Shimmer";
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
+import { SWIGGY_API } from "../utils/constants";
 
 
 
@@ -10,7 +12,6 @@ import { Link } from "react-router-dom";
 
 
 const Body = () =>{
-
 
     //NEVER CREATE useState() outside of your components or inside if/else
     //useState() => it is used to create local state variables 
@@ -32,7 +33,7 @@ const Body = () =>{
 
     fetchData = async()=>{
         // console.log("fetching data");
-        const data = await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=28.686263&lng=77.3399802&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING");
+        const data = await fetch(SWIGGY_API);
 
         const jsonData  = await data.json();
         // console.log("data",jsonData.data.cards);
@@ -45,6 +46,17 @@ const Body = () =>{
 
     }
 
+
+
+    const onlineStatus =  useOnlineStatus();
+
+    if(onlineStatus === false){
+        return (
+            <h1>
+                 "Looks like you are offline!! Please check your internet connection";
+            </h1>
+        )
+    }
 
   
 

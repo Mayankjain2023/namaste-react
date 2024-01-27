@@ -1,6 +1,7 @@
 import { useState } from "react"
 import { LOGO_URL } from "../utils/constants"
 import { Link } from "react-router-dom";
+import useOnlineStatus from "../utils/useOnlineStatus";
 
 
 
@@ -12,6 +13,8 @@ const Header = () =>{
     //use LINK component provided by the react 
     //as <a> reloads the page where as Link comp just replaces the component with child component
     const [loginState,setLoginState] = useState('Logout');
+    const onlineStatus = useOnlineStatus();
+
 
     return (
 
@@ -22,6 +25,9 @@ const Header = () =>{
             </div>
             <div className="nav-items">
                 <ul>
+                    <li>
+                        Online Status : {onlineStatus? "🟢" :"🔴" }
+                    </li>
                     <li>
                         <Link to='/'>
                             Home
