@@ -8,7 +8,9 @@ import ContactUs from "./components/ContactUs";
 import Error from "./components/Error";
 import Cart from "./components/Cart";
 import RestaurantMenu from "./components/RestaurantMenu";
+// import Grocery from "./components/Grocery";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
+import { lazy,Suspense } from "react";
 
 
 
@@ -27,7 +29,15 @@ import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 
 
 
+//Optimmizations
+/*
+ chunking == 
+ code splitting ==  dynamic bundling == on demand loading i.e load the component only when it is required/asked to be loaded
 
+*/  
+
+
+const Grocery = lazy(()=>import("./components/Grocery"));
 
 
 const AppLayout = () =>{
@@ -65,6 +75,10 @@ const appRouter = createBrowserRouter([
             {
                 path:'/cart',
                 element:<Cart/>
+            },
+            {
+                path:'/grocery',
+                element:<Suspense><Grocery/></Suspense>  
             },
             {
                 path:'/restaurant/:resId',

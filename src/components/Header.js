@@ -48,6 +48,11 @@ const Header = () =>{
                             Cart
                         </Link>
                     </li>
+                    <li>
+                        <Link to='/grocery'>
+                            Grocery
+                        </Link>
+                    </li>
 
                     <span >
                         <button className="login-button" onClick={()=>{console.log("click"); loginState == 'Login' ? setLoginState('Logout') : setLoginState('Login')}}>
