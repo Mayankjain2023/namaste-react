@@ -63,9 +63,9 @@ const Body = () =>{
     return (listOfRes.length === 0)? <ShimmerUI/> :(
         <div className="body">
             <div className="filter">
-                <div className="search-box">
-                        <input type="text" onChange={(e)=>{console.log(e.target.value),setSearchText(e.target.value)}} placeholder="Search" value={searchText}/>
-                            <button className="search-btn"  
+                <div className="search m-4 p-4 ">
+                        <input type="text" className="border border-solid border-black" onChange={(e)=>{console.log(e.target.value),setSearchText(e.target.value)}} placeholder="Search" value={searchText}/>
+                            <button className="m-4 px-2 py-1 border-solid bg-green-400"  
                             onClick={()=>{
                                 console.log("click")
                                  const filteredRestaurants = listOfRes.filter((res=>res.info.name.toLowerCase().includes(searchText.toLowerCase())))
@@ -85,7 +85,7 @@ const Body = () =>{
                     }
                     }> Top Rated Restaurants</button>
             </div>
-                <div className="res-container">
+                <div className="container">
                     {
                         //always give a key when looping and passing it to props as each prop must be uniquely represented
                         //don't use index as keys

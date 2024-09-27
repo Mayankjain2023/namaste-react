@@ -9,7 +9,7 @@ const [count,setCount] = useState(0);
 
     return (
         <div
-         className="user-card">
+         className="card">
 
             <h2 onClick={(e)=>{
                 setCount(count+1)

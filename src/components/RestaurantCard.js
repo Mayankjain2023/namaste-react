@@ -7,7 +7,7 @@ const RestoCard = (props)=>{
     const {name,cuisines,avgRating,costForTwo,} = resData
 
     return (
-        <div className="res-card">
+        <div className="m-4 p-4 flex card">
             <img className="res-logo" src= {IMAGE_URL + resData.cloudinaryImageId} />
             <h3>{name}</h3>
             <h4>{cuisines.join(',')}</h4>

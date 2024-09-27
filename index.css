@@ -1,5 +1,9 @@
 
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* 
 .heading{
    display: flex;
    justify-content: space-between;
@@ -28,11 +32,7 @@
     font-size: large;
     font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-/* 
-.body {
-    border: 1px solid gray;
 
-} */
 
 .res-container{
     display: flex;
@@ -60,17 +60,12 @@
 }
 
 .filter-btn{
-    /* padding: 5px; */
     margin-left: 5px;
     cursor: pointer;
     background-color: lightgreen;
     justify-content: end;
 }
-/* 
-.search{
-    margin-top: 10px;
-    padding: 10px;
-} */
+
 
 .footer {
     margin-top: 15px;
@@ -100,12 +95,6 @@
     margin-top: 20px;
     cursor: pointer;
 }
-/* 
-.search-bar {
-   border:1px;
-   border-radius: 0.5px;
-  
-} */
 
 .search-btn{
     margin-left: 10px;
@@ -137,4 +126,4 @@
     width:200px;
     display:flex;
     border-radius:40px;
-}
+} */
