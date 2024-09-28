@@ -1,4 +1,4 @@
-import RestoCard from "./RestaurantCard";
+import RestoCard, { withPromotedLabel } from "./RestaurantCard";
 import { useState,useEffect } from "react";
 import ShimmerUI from "./Shimmer";
 import { Link } from "react-router-dom";
@@ -22,6 +22,7 @@ const Body = () =>{
   let [filteredRestaurants,setFilteredRes] = useState([]);
   let [searchText,setSearchText] = useState('');
     // console.log(listOfRes);
+  const RestrocardPromoted = withPromotedLabel(RestoCard);  
 
 
     // useEffect hook (takes 2 arguements) as soon as body component renders it calls the callback function
@@ -95,7 +96,12 @@ const Body = () =>{
                         
                         filteredRestaurants.map((res) => (
                             <Link key={res.info.id} to ={"/restaurant/"+res.info.id}>
-                        <RestoCard  resData = {res.info}/>
+                                {
+                                /** if restaurant is promoted pass the restocard component to withPromoted function to get the enchanced card */
+                                !res.info.promoted ? <RestrocardPromoted resData={res.info}></RestrocardPromoted> : <RestoCard resData={res.info}></RestoCard>
+                                }
+                              
+                        {/* <RestoCard  resData = {res.info}/> */}
                             </Link>
                        
 

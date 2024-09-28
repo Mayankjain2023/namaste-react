@@ -35,9 +35,9 @@ const RestaurantMenu =()=>{
 
     if(restaurantInfo === null ) return <ShimmerUI/>
     console.log('Res',restaurantInfo);
-    const {name,cuisines,costForTwo} = restaurantInfo?.data?.cards[0]?.card?.card?.info;
+    const {name,cuisines,costForTwo} = restaurantInfo?.data?.cards[2]?.card?.card?.info;
 
-    const {itemCards} = restaurantInfo?.data?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    const {itemCards} = restaurantInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
     console.log(itemCards)
     return (
         <div className="menu">
