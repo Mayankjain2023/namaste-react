@@ -61,11 +61,11 @@ const Body = () =>{
   
 
     return (listOfRes.length === 0)? <ShimmerUI/> :(
-        <div className="body">
-            <div className="filter">
+        <div className="body m-4">
+            <div className="filter flex">
                 <div className="search m-4 p-4 ">
                         <input type="text" className="border border-solid border-black" onChange={(e)=>{console.log(e.target.value),setSearchText(e.target.value)}} placeholder="Search" value={searchText}/>
-                            <button className="m-4 px-2 py-1 border-solid bg-green-400"  
+                            <button className="m-4 px-2 py-1 border-solid bg-green-400 rounded-lg"  
                             onClick={()=>{
                                 console.log("click")
                                  const filteredRestaurants = listOfRes.filter((res=>res.info.name.toLowerCase().includes(searchText.toLowerCase())))
@@ -75,7 +75,8 @@ const Body = () =>{
                                 }
                             }>Search</button>
                 </div>
-                <button className="filter-btn"  onClick={
+                <div className="search m-4 p-4 flex items-center">
+                <button className="m-2 p-2 bg-gray-100 h-10 rounded-lg"  onClick={
                     ()=>{
 
                         const filterList= listOfRes.filter((res)=> res.info.avgRating>4);
@@ -84,8 +85,10 @@ const Body = () =>{
 
                     }
                     }> Top Rated Restaurants</button>
+                </div>
+        
             </div>
-                <div className="container">
+            <div className="flex flex-wrap">
                     {
                         //always give a key when looping and passing it to props as each prop must be uniquely represented
                         //don't use index as keys
@@ -99,7 +102,7 @@ const Body = () =>{
                         ))
                     }
 
-                </div>
+            </div>
         </div>
     )
 }
