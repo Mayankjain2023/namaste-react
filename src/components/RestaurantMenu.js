@@ -6,6 +6,7 @@ import useRestaurantMenu from "../utils/useRestaurantMenu";
 import RestaurantCategory from "./RestaurantCategory";
 
 
+
 const RestaurantMenu =()=>{
 
 
@@ -29,7 +30,7 @@ const RestaurantMenu =()=>{
     //     setRestaurantInfo(menuItems);
 
     // }
-
+    const [showIndex,setShowIndex] = useState(0);
 
 
 
@@ -51,7 +52,7 @@ const RestaurantMenu =()=>{
                 <p  className="font-bold text-lg">{cuisines.join(', ')} - {costForTwo}</p>
 
                 <div className="">
-                    {categories.map(c=> <RestaurantCategory key={c?.card?.card?.title} data = {c}/> )}
+                    {categories.map((c,index)=> <RestaurantCategory key={c?.card?.card?.title} data = {c} showItems={index == showIndex ? true:false} setShowIndex={()=>setShowIndex(index == showIndex ? null:index)}/> )}
                 </div>
                 {/* <ul>
                     {itemCards.map(i=><li key = {i?.card?.info?.id} >{i?.card?.info?.name} - {'Rs. '} {i?.card?.info?.price ? i?.card?.info?.price : i?.card?.info?.defaultPrice } </li>)}
