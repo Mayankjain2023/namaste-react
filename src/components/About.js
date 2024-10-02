@@ -24,7 +24,8 @@ componentDidMount(){
                 
                 <div>
                     
-                    {/* // way to use in case of class based components since we dont have hooks here */}
+                    {/* // way to use in case of class based components since we dont have hooks here
+                    consumer takes a callback to use the data in it */}
                     <UserData.Consumer> 
                         {({firstName})=>(
                             <h1>{firstName}</h1>)}
