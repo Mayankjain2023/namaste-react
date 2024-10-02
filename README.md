@@ -82,24 +82,11 @@ Github: acdlite/react-fibre-architecture
 
 
 
-Project Design :
+#redux-toolkit
 
-/**
- * Header
- * - Logo 
- * - Nav Items
- * Body
- *  - Search
- *  - RestaurantContainer
- *  - RestaurantCard
- *     -> image
- *     -> Name
- *     -> Cuisines
- *     -> Rate/offer
- * Footer
- * -Copyright
- * -Links
- * -Address 
- * -Contact
- * 
- */
+1) npm i @reduxjs/toolkit & react-redux
+2) Build the store
+3) Connect the store to the app
+4) Create the card slice
+5) Dispatch action
+6) Read data via selector
