@@ -90,3 +90,4 @@ Github: acdlite/react-fibre-architecture
 4) Create the card slice
 5) Dispatch action
 6) Read data via selector
+7) Make reducers
