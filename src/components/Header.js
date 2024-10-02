@@ -1,7 +1,8 @@
-import { useState } from "react"
+import { useContext, useState } from "react"
 import { LOGO_URL } from "../utils/constants"
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
+import UserData from "../utils/userContext";
 
 
 
@@ -14,6 +15,8 @@ const Header = () =>{
     //as <a> reloads the page where as Link comp just replaces the component with child component
     const [loginState,setLoginState] = useState('Logout');
     const onlineStatus = useOnlineStatus();
+    const userInfo = useContext(UserData);
+    console.log("user",userInfo)
 
 
     return (
@@ -53,12 +56,15 @@ const Header = () =>{
                             Grocery
                         </Link>
                     </li>
-
+                   
+                    
                     <span >
                         <button className="btn" onClick={()=>{console.log("click"); loginState == 'Login' ? setLoginState('Logout') : setLoginState('Login')}}>
                           {loginState}
                         </button>
                     </span>
+                    <span  className="mx-2 px-2"> {userInfo.firstName}</span>
+
                     
                 </ul>
             </div>    

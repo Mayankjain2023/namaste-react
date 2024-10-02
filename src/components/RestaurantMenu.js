@@ -35,16 +35,16 @@ const RestaurantMenu =()=>{
 
 
     if(restaurantInfo === null ) return <ShimmerUI/>
-    console.log('Res',restaurantInfo);
+    // console.log('Res',restaurantInfo);
     const {name,cuisines,costForTwo} = restaurantInfo?.data?.cards[2]?.card?.card?.info;
 
     const {itemCards} = restaurantInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
-    console.log(itemCards)
+    // console.log(itemCards)
     const categories = restaurantInfo?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter((card)=>{
-        console.log("c",card.card.card['@type']);
+        // console.log("c",card.card.card['@type']);
         return card?.card.card['@type'].includes('type.googleapis.com/swiggy.presentation.food.v2.ItemCategory')
     } );
-    console.log("categories",categories);
+    // console.log("categories",categories);
     return (
         <div className="text-center">
             <div >

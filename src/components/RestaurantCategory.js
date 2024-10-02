@@ -4,7 +4,7 @@ import ItemList from "./ItemList";
 
 const RestaurantCategory = ({data,showItems,setShowIndex})=>{
     // console.log("c",props);
-    console.log('show',showItems);
+    // console.log('show',showItems);
 
     // let [showItems,setShowItems] = useState(false)
 

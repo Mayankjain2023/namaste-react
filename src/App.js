@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import  ReactDOM  from "react-dom/client";
 import Header from './components/Header';
 import Footer from './components/Footer';
@@ -11,6 +11,7 @@ import RestaurantMenu from "./components/RestaurantMenu";
 // import Grocery from "./components/Grocery";
 import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 import { lazy,Suspense } from "react";
+import UserData from "./utils/userContext";
 
 
 
@@ -40,11 +41,26 @@ import { lazy,Suspense } from "react";
 const Grocery = lazy(()=>import("./components/Grocery"));
 
 
+
+
 const AppLayout = () =>{
+
+    //dummy auth code (if) how to update the user across app -> userData(component).provider -> to provide value across app (can be used multiple times)
+    const [userName,setUserName] = useState();
+    useEffect(()=>{
+        const data = {
+            firstName:"Ajay"
+        }
+        setUserName(data.firstName)
+    },[]) //want to call it only once
+    
+
     return(
         <div className= "app">
-            <Header/>
-            <Outlet/>
+            <UserData.Provider value={{firstName:userName,setUserName}}>
+                <Header/>
+                <Outlet/>
+            </UserData.Provider>
             <Footer/>
         </div>
     )

@@ -2,6 +2,7 @@ import User from "./User";
 import UserClass from "./UserClass";
 import { Component } from "react";
 
+import UserData from "../utils/userContext";
 class About extends Component{
 // const About = ()=>{
 constructor(props){
@@ -19,6 +20,15 @@ componentDidMount(){
             <div >
                 <div >
                     <h1>About </h1>
+                </div>
+                
+                <div>
+                    
+                    {/* // way to use in case of class based components since we dont have hooks here */}
+                    <UserData.Consumer> 
+                        {({firstName})=>(
+                            <h1>{firstName}</h1>)}
+                    </UserData.Consumer>
                 </div>
                 <div>
                             {/* <User name={'Mayank'} location={'Delhi'} /> */}

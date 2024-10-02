@@ -1,9 +1,10 @@
 import RestoCard, { withPromotedLabel } from "./RestaurantCard";
-import { useState,useEffect } from "react";
+import { useState,useEffect, useContext } from "react";
 import ShimmerUI from "./Shimmer";
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import { SWIGGY_API } from "../utils/constants";
+import UserData from "../utils/userContext";
 
 
 
@@ -47,6 +48,8 @@ const Body = () =>{
 
     }
 
+   const userInfo = useContext(UserData);
+
 
 
     const onlineStatus =  useOnlineStatus();
@@ -86,7 +89,13 @@ const Body = () =>{
 
                     }
                     }> Top Rated Restaurants</button>
+                      <div >
+                <label className="font-bold p-2">Username</label>
+                <input className="mt-2 p-2 border border-black" value={userInfo.firstName} onChange={(e)=>{userInfo.setUserName(e.target.value)}}></input>
                 </div>
+                </div>
+              
+                
         
             </div>
             <div className="flex flex-wrap">
