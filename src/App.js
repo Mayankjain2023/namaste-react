@@ -13,7 +13,13 @@ import { createBrowserRouter,RouterProvider,Outlet } from "react-router-dom";
 import { lazy,Suspense } from "react";
 import UserData from "./utils/userContext";
 
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
+//Provider from react-redux to provide store to our react applications#bridge
+
+//Provide takes appStore here as the props to provide the redux store to entire application
+//we can partially provide it as well just wrap only those components which need to use redux
 
 
 //props-> prop drilling (arguments to a function [equivalent])
@@ -57,11 +63,14 @@ const AppLayout = () =>{
 
     return(
         <div className= "app">
-            <UserData.Provider value={{firstName:userName,setUserName}}>
-                <Header/>
-                <Outlet/>
-            </UserData.Provider>
-            <Footer/>
+            <Provider store={appStore}>
+                <UserData.Provider value={{firstName:userName,setUserName}}>
+                    <Header/>
+                    <Outlet/>
+                </UserData.Provider>
+                <Footer/>
+            </Provider>
+            
         </div>
     )
 }
@@ -99,6 +108,10 @@ const appRouter = createBrowserRouter([
             {
                 path:'/restaurant/:resId',
                 element:<RestaurantMenu/>
+            },
+            {
+                path:'/cart',
+                element:<Suspense><Cart/></Suspense>
             }
         ]
     },

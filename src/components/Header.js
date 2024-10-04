@@ -3,6 +3,8 @@ import { LOGO_URL } from "../utils/constants"
 import { Link } from "react-router-dom";
 import useOnlineStatus from "../utils/useOnlineStatus";
 import UserData from "../utils/userContext";
+import { useSelector } from "react-redux";
+import appStore from "../utils/appStore";
 
 
 
@@ -16,7 +18,12 @@ const Header = () =>{
     const [loginState,setLoginState] = useState('Logout');
     const onlineStatus = useOnlineStatus();
     const userInfo = useContext(UserData);
-    console.log("user",userInfo)
+    // console.log("user",userInfo)
+
+
+    //to read the data from the store we use selector and selector is a hook
+    const cartItems = useSelector((store)=>store.cart.items)
+    console.log("cartItems",cartItems);
 
 
     return (
@@ -46,9 +53,10 @@ const Header = () =>{
                         Contact Us
                         </Link>
                     </li>
-                    <li className="px-4">
+                    <li className="px-4 text-xl font-bold">
                         <Link to='/cart'>
-                            Cart
+                        <i className="fa-solid fa-cart-shopping"></i>
+                        ({cartItems.length})
                         </Link>
                     </li>
                     <li className="px-4">

@@ -7,8 +7,8 @@ const Footer = ()=>{
 
     return (
         <div className="footer">
-            Footer
-            <div className="m-2 p-2 font-bold">{userInfo.firstName}</div>
+            {/* Footer */}
+            <div className="m-4 p-4 font-bold"></div>
         </div>
     )
 }
