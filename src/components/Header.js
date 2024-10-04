@@ -22,6 +22,8 @@ const Header = () =>{
 
 
     //to read the data from the store we use selector and selector is a hook
+    //carefully subscribe to the store that needs to be used
+    //otherwise it will be a huge performance loss
     const cartItems = useSelector((store)=>store.cart.items)
     console.log("cartItems",cartItems);
 
