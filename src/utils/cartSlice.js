@@ -1,4 +1,4 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, current } from "@reduxjs/toolkit";
 import { act } from "react";
 
 
@@ -13,6 +13,11 @@ const cartSlice = createSlice({
         addItem:(state,action)=>{
             //thru action we recieve the payload and we update the state of the cart
             //mutating the state here
+
+            //vanilla reux- DONT MUTATE STATE -> now we can do it
+            //now redux does the same thing by using immer.js library to find the diff
+            //btw old state and new state
+
             console.log(state);
             console.log(action);
             state.items.push(action.payload);
@@ -21,9 +26,16 @@ const cartSlice = createSlice({
                 //logic for removing item based on item index
         },
         clearCart:(state,action)=>{
-            //state.items = []; ->this will not work
 
-            state.items.length =0;
+            console.log(state) //cannot read the directly like this 
+            console.log(current(state)) //use current from redux-toolkit to see the state
+
+
+            //RTK -> ALWAYS MUTATE THE STATE OR RETURN THE NEW STATE
+            state.items = []; 
+            //->this will not work
+
+            // state.items.length =0;
         }
 
     }
